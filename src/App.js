@@ -1,4 +1,10 @@
 import './App.css';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
+AOS.init();
+
+
 
 function App() {
   return (
@@ -7,7 +13,7 @@ function App() {
     <header className="container">
         <nav className="navbar navbar-expand-lg">
             <div className="container-fluid">
-                <img src="./images/Logo/Vector.png" className="navbar-brand" alt="Logo" />
+                <img src="/images/Logo/Vector.png" className="navbar-brand" alt="Logo" />
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false"
                     aria-label="Toggle navigation">
@@ -38,7 +44,7 @@ function App() {
                 <h1 className="text-primary fs-big">Find Out Now!</h1>
             </div>
             <div data-aos="fade-left" data-aos-duration="1500" className="col-lg-6 text-center">
-                <img className="w-75" src="./images/Hero Section/banner.png" alt="Banner" />
+                <img className="w-75" src="/images/Hero Section/banner.png" alt="Banner" />
             </div>
         </div>
     </nav>
@@ -53,31 +59,31 @@ function App() {
             </div>
             <div className="d-flex mt-6 mb-5 justify-content-between scroll-card gap-5">
                 <div data-aos="fade-up" data-aos-duration="500" className="text-center d-grid hover-bg padding-mobile">
-                    <img src="./images/Poster/Rectangle 119-1.png" alt="poster" />
+                    <img src="/images/Poster/Rectangle 119-1.png" alt="poster" />
                     <p className="mt-3">Black Widow</p>
                     <p className="text-secondary">Action, Adventure, Sci-Fi</p>
                     <button type="button" className="button-cls">Details</button>
                 </div>
                 <div data-aos="fade-up" data-aos-duration="600" className="text-center d-grid hover-bg">
-                    <img src="./images/Poster/Rectangle 119-2.png" alt="poster" />
+                    <img src="/images/Poster/Rectangle 119-2.png" alt="poster" />
                     <p className="mt-3">Black Widow</p>
                     <p className="text-secondary">Action, Adventure, Sci-Fi</p>
                     <button type="button" className="button-cls">Details</button>
                 </div>
                 <div data-aos="fade-up" data-aos-duration="700" className="text-center d-grid hover-bg">
-                    <img src="./images/Poster/Rectangle 119.png" alt="poster" />
+                    <img src="/images/Poster/Rectangle 119.png" alt="poster" />
                     <p className="mt-3">Black Widow</p>
                     <p className="text-secondary">Action, Adventure, Sci-Fi</p>
                     <button type="button" className="button-cls">Details</button>
                 </div>
                 <div data-aos="fade-up" data-aos-duration="800" className="text-center d-grid hover-bg">
-                    <img src="./images/Poster/Rectangle 139-1.png" alt="poster" />
+                    <img src="/images/Poster/Rectangle 139-1.png" alt="poster" />
                     <p className="mt-3">Black Widow</p>
                     <p className="text-secondary">Action, Adventure, Sci-Fi</p>
                     <button type="button" className="button-cls">Details</button>
                 </div>
                 <div data-aos="fade-up" data-aos-duration="900" className="text-center d-grid hover-bg">
-                    <img src="./images/Poster/Rectangle 139.png" alt="poster" />
+                    <img src="/images/Poster/Rectangle 139.png" alt="poster" />
                     <p className="mt-3">Black Widow</p>
                     <p className="text-secondary">Action, Adventure, Sci-Fi</p>
                     <button type="button" className="button-cls mt-3">Details</button>
@@ -119,25 +125,25 @@ function App() {
                     <button type="button" className="button-cls">Details</button>
                 </div>
                 <div data-aos="fade-up" data-aos-duration="600" className="text-center d-grid">
-                    <img src="./images/Poster/Rectangle 119-2.png" alt="poster" />
+                    <img src="/images/Poster/Rectangle 119-2.png" alt="poster" />
                     <p className="mt-3">Black Widow</p>
                     <p className="text-secondary">Action, Adventure, Sci-Fi</p>
                     <button type="button" className="button-cls">Details</button>
                 </div>
                 <div data-aos="fade-up" data-aos-duration="700" className="text-center d-grid">
-                    <img src="./images/Poster/Rectangle 119.png" alt="poster" />
+                    <img src="/images/Poster/Rectangle 119.png" alt="poster" />
                     <p className="mt-3">Black Widow</p>
                     <p className="text-secondary">Action, Adventure, Sci-Fi</p>
                     <button type="button" className="button-cls">Details</button>
                 </div>
                 <div data-aos="fade-up" data-aos-duration="800" className="text-center d-grid">
-                    <img src="./images/Poster/Rectangle 139-1.png" alt="poster" />
+                    <img src="/images/Poster/Rectangle 139-1.png" alt="poster" />
                     <p className="mt-3">Black Widow</p>
                     <p className="text-secondary">Action, Adventure, Sci-Fi</p>
                     <button type="button" className="button-cls">Details</button>
                 </div>
                 <div data-aos="fade-up" data-aos-duration="900" className="text-center d-grid">
-                    <img src="./images/Poster/Rectangle 139.png" alt="poster" />
+                    <img src="/images/Poster/Rectangle 139.png" alt="poster" />
                     <p className="mt-3">Black Widow</p>
                     <p className="text-secondary">Action, Adventure, Sci-Fi</p>
                     <button type="button" className="button-cls mt-3">Details</button>
@@ -182,27 +188,27 @@ function App() {
             </div>
             <div className="d-flex gap-2 justify-content-center flex-column">
                 <p className="fs-5"><b>Our Sponsor</b></p>
-                <img className="sponsor-img" src="./images/Company/Vector.png" alt="Sponsor Logo" />
-                <img className="sponsor-img" src="./images/Company/Vector-1.png" alt="Sponsor Logo" />
-                <img className="sponsor-img" src="./images/Company/Vector-2.png" alt="Sponsor Logo" />
+                <img className="sponsor-img" src="/images/Company/Vector.png" alt="Sponsor Logo" />
+                <img className="sponsor-img" src="/images/Company/Vector-1.png" alt="Sponsor Logo" />
+                <img className="sponsor-img" src="/images/Company/Vector-2.png" alt="Sponsor Logo" />
             </div>
             <div className="d-flex gap-2 justify-content-center justify flex-column">
                 <p className="fs-5"><b>Follow us</b></p>
 
                 <div className="d-flex align-content-center">
-                    <img src="./images/Icon/eva_facebook-outline.svg" alt="Facebook Icon" />
+                    <img src="/images/Icon/eva_facebook-outline.svg" alt="Facebook Icon" />
                     <a href="#">Tickitz Cinema id</a>
                 </div>
                 <div className="d-flex align-content-center">
-                    <img src="./images/Icon/bx_bxl-instagram.svg" alt="Instagram Icom" />
+                    <img src="/images/Icon/bx_bxl-instagram.svg" alt="Instagram Icom" />
                     <a href="#">tickitz.id</a>
                 </div>
                 <div className="d-flex align-content-center">
-                    <img src="./images/Icon/eva_twitter-outline.svg" alt="Twitter Icon" />
+                    <img src="/images/Icon/eva_twitter-outline.svg" alt="Twitter Icon" />
                     <a href="#">tickitz.id</a>
                 </div>
                 <div className="d-flex align-content-center">
-                    <img src="./images/Icon/feather_youtube.svg" alt="Youtube Icon" />
+                    <img src="/images/Icon/feather_youtube.svg" alt="Youtube Icon" />
                     <a href="#">Tickitz Cinema id</a>
                 </div>
             </div>
