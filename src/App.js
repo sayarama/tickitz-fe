@@ -147,7 +147,70 @@ function App() {
     </section>
     {/* <!-- End Movie Section --> */}
 
+    {/* <!-- CTA --> */}
+    <section>
+        <div data-aos="fade-up" data-aos-duration="1000"
+            class="container mt-10 mb-10 text-center shadow-lg p-5 rounded-2">
+            <p class="text-secondary">Be the vanguard of the</p>
+            <h2 class="text-primary">Moviegoers</h2>
+            <div class="mt-5 mb-5 d-flex justify-content-center gap-3">
+                <input class="p-2" type="text" placeholder="Type your email" />
+                <button class="btn btn-primary px-4">Join Now</button>
+            </div>
+            <p class="text-secondary">
+                By joining you as a Tickitz member. <br />
+                we will always send you the latest updates via email
+            </p>
+        </div>
+    </section>
+    {/* <!-- End CTA --> */}
 
+    {/* <!-- Footer --> */}
+    <footer class="container mb-3 footer-padding">
+        <div class="d-flex footer-mobile gap-5 justify-content-around text-center">
+            <div class="d-flex gap-2 justify-content-center flex-column">
+                <img src="./images/Logo/Tickitz 2.svg" alt="Tickitz Logo" />
+                <p class="text-secondary">
+                    Stop waiting in line. Buy tickets <br />
+                    conveniently, watch movies quitely.
+                </p>
+            </div>
+            <div class="d-flex gap-2 justify-content-center flex-column">
+                <p class="fs-5"><b>Explore</b></p>
+                <a href="#">Home</a>
+                <a href="#">List Movie</a>
+            </div>
+            <div class="d-flex gap-2 justify-content-center flex-column">
+                <p class="fs-5"><b>Our Sponsor</b></p>
+                <img class="sponsor-img" src="./images/Company/Vector.png" alt="Sponsor Logo" />
+                <img class="sponsor-img" src="./images/Company/Vector-1.png" alt="Sponsor Logo" />
+                <img class="sponsor-img" src="./images/Company/Vector-2.png" alt="Sponsor Logo" />
+            </div>
+            <div class="d-flex gap-2 justify-content-center justify flex-column">
+                <p class="fs-5"><b>Follow us</b></p>
+
+                <div class="d-flex align-content-center">
+                    <img src="./images/Icon/eva_facebook-outline.svg" alt="" />
+                    <a href="#">Tickitz Cinema id</a>
+                </div>
+                <div class="d-flex align-content-center">
+                    <img src="./images/Icon/bx_bxl-instagram.svg" alt="" />
+                    <a href="#">tickitz.id</a>
+                </div>
+                <div class="d-flex align-content-center">
+                    <img src="./images/Icon/eva_twitter-outline.svg" alt="" />
+                    <a href="#">tickitz.id</a>
+                </div>
+                <div class="d-flex align-content-center">
+                    <img src="./images/Icon/feather_youtube.svg" alt="" />
+                    <a href="#">Tickitz Cinema id</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <footer class="text-center mt-5">© 2020 Tickitz. All Rights Reserved.</footer>
+    {/* <!-- End Footer --> */}
 
     </div>
   );
