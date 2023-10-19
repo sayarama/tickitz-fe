@@ -1,4 +1,4 @@
-import './App.css';
+import './style/App.css';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
@@ -111,11 +111,11 @@ function App() {
                 <button type="button" className="button-months">Jul</button>
                 <button type="button" className="button-months">Aug</button>
                 <button type="button" className="button-months">Sep</button>
-                <button type="button" className="button-months active">Oct</button>
+                <button type="button" className="button-months">Oct</button>
                 <button type="button" className="button-months">Nov</button>
                 <button type="button" className="button-months">Dec</button>
             </div>
-            {/* <!-- End Monts --> */}
+            {/* <!-- End Months --> */}
 
             <div className="d-flex mt-6 mb-5 justify-content-between scroll-card gap-5 p-4">
                 <div data-aos="fade-up" data-aos-duration="500" className="text-center d-grid">

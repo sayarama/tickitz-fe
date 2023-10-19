@@ -54,10 +54,6 @@ p{
     color: white;
 }
 
-.active{
-    background-color: #5F2EEA;
-    color: white;
-}
 
 .hover-bg:hover{
     background-color: rgb(255, 255, 255);
