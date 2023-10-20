@@ -10,6 +10,18 @@ AOS.init();
 
 
 function App() {
+    // mounting
+    const date = new Date();
+    const month = date.toLocaleDateString("default", { month: "long"});
+
+    const [result, setResult] = React.useState([]);
+    const [selectedMonth, setSelectedMonth] = React.useState(month.toLowerCase());
+
+    // lifecycle
+    React.useEffect(() => {
+        axios
+        .get("")
+    })
   return (
     <div className='app'>
        {/* <!-- Header Navigation --> */}
