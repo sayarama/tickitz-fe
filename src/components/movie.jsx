@@ -1,6 +1,7 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
-function movie(props) {
+function Movie(props) {
     const {poster, title, genres} = props
   return (
     <div data-aos="fade-up" data-aos-duration="500" className="text-center d-grid hover-bg padding-mobile">
@@ -11,9 +12,11 @@ function movie(props) {
                             <span>{genres.length - 1 === key ? item : `${item},`}</span>
                         ))}
                     </p>
+                    <Link to={`/detail/${title.toLowerCase().split(" ").join("-")}`}>
                     <button type="button" className="button-cls">Details</button>
+                    </Link>
                 </div>
   )
 }
 
-export default movie
+export default Movie

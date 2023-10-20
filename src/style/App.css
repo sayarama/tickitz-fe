@@ -168,6 +168,17 @@ p{
   }
   
 
+.border-poster{
+    padding: 30px;
+    border: 1px solid black;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.detail-poster{
+    width: 220px;
+    border-radius: 15px;
+}
 
 
 @media screen and (max-width: 986px) {
