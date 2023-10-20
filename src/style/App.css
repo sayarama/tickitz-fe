@@ -41,18 +41,33 @@ p{
     color: white;
 }
 
-.button-months{
-    border: 1px solid #5F2EEA;
-    border-radius: 8px;
-    color: #5F2EEA;
-    padding: 8px 25px 8px 25px;
-    background-color: transparent;
-}
+.btn-primary {
+    background-color: #5f2eea;
+    border-color: #5f2eea;
+  }
+  
+  .btn-primary:hover {
+    background-color: #592fce;
+    border-color: #592fce;
+  }
 
-.button-months:hover{
-    background-color: #5F2EEA;
-    color: white;
-}
+  .btn-details {
+    border-radius: 4px;
+    border: 1px solid #5f2eea;
+    color: #5f2eea;
+    background-color: #fff;
+    text-align: center;
+    font-family: "Open Sans", sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  
+  .btn-details:hover {
+    background-color: #5f2eea;
+    color: #fff;
+  }
 
 .hover-bg img{
     margin-left: 6.5px;

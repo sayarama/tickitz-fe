@@ -4,9 +4,13 @@ function movie(props) {
     const {poster, title, genres} = props
   return (
     <div data-aos="fade-up" data-aos-duration="500" className="text-center d-grid hover-bg padding-mobile">
-                    <img src="/images/Poster/Rectangle 119-1.png" alt="poster" />
-                    <p className="mt-3">Black Widow</p>
-                    <p className="text-secondary">Action, Adventure, Sci-Fi</p>
+                    <img src={poster} alt="poster" />
+                    <p className="mt-3">{title}</p>
+                    <p className="text-secondary">
+                        {genres?.map((item, key) => (
+                            <span>{genres.length - 1 === key ? item : `${item},`}</span>
+                        ))}
+                    </p>
                     <button type="button" className="button-cls">Details</button>
                 </div>
   )
