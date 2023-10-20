@@ -159,11 +159,6 @@ function App() {
                     {/* <!-- End Months --> */}
 
                     <div className="d-flex mt-6 mb-5 justify-content-between scroll-card gap-5 p-4">
-                        <div
-                            data-aos="fade-up"
-                            data-aos-duration="500"
-                            className="text-center d-grid"
-                        >
                             {result
                                 .filter((item) => item.isShowing === false || true)
                                 .filter((item) => item.showingMonth === selectedMonth)
@@ -176,7 +171,6 @@ function App() {
                                         desc={item.desc}
                                     />
                                 ))}
-                        </div>
                         {/* Movie Not Found */}
                         {result
                             .filter((item) => item.isShowing === false || true)
