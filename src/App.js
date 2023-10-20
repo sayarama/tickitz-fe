@@ -1,6 +1,9 @@
 import './style/App.css';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import MovieComp from "./components/movie.jsx"
+import React from 'react';
+import axios from "axios";
 
 AOS.init();
 
@@ -58,36 +61,7 @@ function App() {
                 <p className="text-primary">View All</p>
             </div>
             <div className="d-flex mt-6 mb-5 justify-content-between scroll-card gap-5">
-                <div data-aos="fade-up" data-aos-duration="500" className="text-center d-grid hover-bg padding-mobile">
-                    <img src="/images/Poster/Rectangle 119-1.png" alt="poster" />
-                    <p className="mt-3">Black Widow</p>
-                    <p className="text-secondary">Action, Adventure, Sci-Fi</p>
-                    <button type="button" className="button-cls">Details</button>
-                </div>
-                <div data-aos="fade-up" data-aos-duration="600" className="text-center d-grid hover-bg">
-                    <img src="/images/Poster/Rectangle 119-2.png" alt="poster" />
-                    <p className="mt-3">Black Widow</p>
-                    <p className="text-secondary">Action, Adventure, Sci-Fi</p>
-                    <button type="button" className="button-cls">Details</button>
-                </div>
-                <div data-aos="fade-up" data-aos-duration="700" className="text-center d-grid hover-bg">
-                    <img src="/images/Poster/Rectangle 119.png" alt="poster" />
-                    <p className="mt-3">Black Widow</p>
-                    <p className="text-secondary">Action, Adventure, Sci-Fi</p>
-                    <button type="button" className="button-cls">Details</button>
-                </div>
-                <div data-aos="fade-up" data-aos-duration="800" className="text-center d-grid hover-bg">
-                    <img src="/images/Poster/Rectangle 139-1.png" alt="poster" />
-                    <p className="mt-3">Black Widow</p>
-                    <p className="text-secondary">Action, Adventure, Sci-Fi</p>
-                    <button type="button" className="button-cls">Details</button>
-                </div>
-                <div data-aos="fade-up" data-aos-duration="900" className="text-center d-grid hover-bg">
-                    <img src="/images/Poster/Rectangle 139.png" alt="poster" />
-                    <p className="mt-3">Black Widow</p>
-                    <p className="text-secondary">Action, Adventure, Sci-Fi</p>
-                    <button type="button" className="button-cls mt-3">Details</button>
-                </div>
+                <MovieComp/>
             </div>
         </div>
     </section>

@@ -54,15 +54,6 @@ p{
     color: white;
 }
 
-
-.hover-bg:hover{
-    background-color: rgb(255, 255, 255);
-    padding: 20px;
-    box-shadow: 2px 10px 229px -112px rgba(0,0,0,0.75);
--webkit-box-shadow: 2px 10px 229px -112px rgba(0,0,0,0.75);
--moz-box-shadow: 2px 10px 229px -112px rgba(0,0,0,0.75);
-}
-
 .hover-bg img{
     margin-left: 6.5px;
 }
