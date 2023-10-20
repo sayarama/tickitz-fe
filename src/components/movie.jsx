@@ -4,7 +4,7 @@ function movie(props) {
     const {poster, title, genres} = props
   return (
     <div data-aos="fade-up" data-aos-duration="500" className="text-center d-grid hover-bg padding-mobile">
-                    <img src={poster} alt="poster" />
+                    <img width={"100%"} className='movie-poster' src={poster} alt="poster" />
                     <p className="mt-3">{title}</p>
                     <p className="text-secondary">
                         {genres?.map((item, key) => (

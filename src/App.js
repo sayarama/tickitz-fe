@@ -104,16 +104,16 @@ function App() {
                     </div>
                     <div className="d-flex mt-6 mb-5 justify-content-between scroll-card gap-5">
                         {result
-                            .filter((item) => item.isShowing)
-                            .slice(0, 5)
-                            .map((item) => {
-                                <MovieComp
-                                    poster={item.poster}
-                                    title={item.title}
-                                    genres={item.genres}
-                                    desc={item.desc}
-                                />;
-                            })}
+                                .filter((item) => item.isShowing === false || true)
+                                .slice(0, 5)
+                                .map((item) => (
+                                    <MovieComp
+                                        poster={item.poster}
+                                        title={item.title}
+                                        genres={item.genres}
+                                        desc={item.desc}
+                                    />
+                                ))}
                     </div>
                 </div>
             </section>
@@ -177,7 +177,22 @@ function App() {
                                     />
                                 ))}
                         </div>
-
+                        {/* Movie Not Found */}
+                        {result
+                            .filter((item) => item.isShowing === false || true)
+                            .filter((item) => item.showingMonth === selectedMonth).length ===
+                            0 ? (
+                            <div className="text-center">
+                                <img
+                                    style={{
+                                        width: "120px",
+                                    }}
+                                    src="/image/icons/not-found.png"
+                                    alt="not found"
+                                />
+                                <h4 className="mt-3">Movie Not Found</h4>
+                            </div>
+                        ) : null}
                     </div>
                 </div>
             </section>
