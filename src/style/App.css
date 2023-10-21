@@ -231,4 +231,23 @@ p{
         margin-top: 10px;
 
     }
+
+    .mobile-detail{
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .directed-mobile{
+        margin-top: 20px;
+    }
+    
+    .border-poster{
+        padding: 15px;
+        border: none;
+    }
+
+    .detail-poster{
+        width: 220px;
+        border-radius: 15px;
+    }
 }

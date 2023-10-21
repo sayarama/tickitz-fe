@@ -50,7 +50,7 @@ function Detail() {
                 <>
                     {/* Start Content */}
                     <section id="content_detail" className="container mt-4 mb-4">
-                        <div className="d-flex gap-5">
+                        <div className="d-flex mobile-detail mb-10 gap-5">
                             <div className="border-poster">
                                 <img
                                     className="detail-poster"
@@ -85,7 +85,7 @@ function Detail() {
                                     <div className="col-md-9 col-sm-12">
                                         {/* directed by */}
                                         <div>
-                                            <p className="text-muted">Directed by</p>
+                                            <p className="text-muted directed-mobile ">Directed by</p>
                                             <p>{detailMovie.director}</p>
                                         </div>
                                         {/* casts */}
@@ -103,7 +103,7 @@ function Detail() {
                                         </div>
                                     </div>
                                 </div>
-                                <hr /> {/* hair line */}
+                                <hr /> {/* hairline */}
                                 <div>
                                     {/* synopsis */}
                                     <h5>Synopsis</h5>
@@ -115,6 +115,8 @@ function Detail() {
                     {/* End Content */}
                 </>
             ) : null}
+
+<hr /> {/* hairline */}
 
             {/* Start Footer */}
             <Footer />
