@@ -5,7 +5,6 @@ import react from "react";
 import axios from "axios";
 import Footer from "../components/footer";
 import Navbar from "../components/Navbar";
-import MovieComp from "../components/Movie.jsx";
 AOS.init();
 
 function home() {
