@@ -121,7 +121,7 @@ p{
 
 .scroll-card{
     overflow: scroll;
-    scrollbar-width: none;
+    scrollbar-width: thin;
     scrollbar-color: #5F2EEA #ffffff00;
     overflow-y: hidden;
 }

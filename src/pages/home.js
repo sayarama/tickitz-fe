@@ -5,6 +5,7 @@ import react from "react";
 import axios from "axios";
 import Footer from "../components/footer";
 import Navbar from "../components/Navbar";
+import MovieComp from "../components/Moviecomp";
 AOS.init();
 
 function home() {
@@ -59,7 +60,7 @@ function home() {
                         <p className="fs-4 bold text-primary">Now Showing</p>
                         <p className="text-primary">View All</p>
                     </div>
-                    <div className="d-flex mt-6 mb-5 justify-content-between scroll-card gap-5">
+                    <div className="d-flex mt-6 mb-5 justify-content-between scroll-card gap-3 p-4">
                         {result
                                 .filter((item) => item.isShowing === false || true)
                                 .slice(0, 5)
@@ -115,7 +116,7 @@ function home() {
                     </div>
                     {/* <!-- End Months --> */}
 
-                    <div className="d-flex mt-6 mb-5 justify-content-between scroll-card gap-5 p-4">
+                    <div className="d-flex mt-6 mb-5 justify-content-between scroll-card gap-3 p-4">
                             {result
                                 .filter((item) => item.isShowing === false || true)
                                 .filter((item) => item.showingMonth === selectedMonth)
@@ -133,13 +134,13 @@ function home() {
                             .filter((item) => item.isShowing === false || true)
                             .filter((item) => item.showingMonth === selectedMonth).length ===
                             0 ? (
-                            <div className="text-center">
+                            <div className="d-flex align-items-center m-auto flex-column">
                                 <img
                                     style={{
-                                        width: "120px",
+                                        width: "100px",
                                     }}
-                                    src="/image/icons/not-found.png"
-                                    alt="not found"
+                                    src="/images/Icon/not-found.png"
+                                    alt="Movie Not Found!!"
                                 />
                                 <h4 className="mt-3">Movie Not Found</h4>
                             </div>

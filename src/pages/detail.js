@@ -51,7 +51,7 @@ function Detail() {
                     {/* Start Content */}
                     <section id="content_detail" className="container mt-4 mb-4">
                         <div className="d-flex mobile-detail mb-10 gap-5">
-                            <div className="border-poster">
+                            <div className="border-poster" data-aos="fade-left">
                                 <img
                                     className="detail-poster"
                                     src={detailMovie.poster}
@@ -59,8 +59,8 @@ function Detail() {
                                 />
                             </div>
                             <div className="col-md-8 col-sm-12">
-                                <h2>{detailMovie.title}</h2>
-                                <p className="genres">
+                                <h2 data-aos="fade-up">{detailMovie.title}</h2>
+                                <p data-aos="fade-up" className="genres">
                                     {detailMovie.genres.map((item, key) => (
                                         <span>
                                             {detailMovie.genres.length - 1 === key
@@ -72,24 +72,24 @@ function Detail() {
                                 <div className="row mt-5">
                                     <div className="col-md-3 col-sm-12">
                                         {/* realease date */}
-                                        <div>
+                                        <div data-aos="fade-left" duration="200">
                                             <p className="text-muted ">Release date</p>
                                             <p>{detailMovie.release}</p>
                                         </div>
                                         {/* duration */}
-                                        <div>
+                                        <div data-aos="fade-left" duration="400">
                                             <p className="text-muted mt-4">Duration</p>
                                             <p>{detailMovie.duration}</p>
                                         </div>
                                     </div>
                                     <div className="col-md-9 col-sm-12">
                                         {/* directed by */}
-                                        <div>
+                                        <div data-aos="fade-left" duration="600">
                                             <p className="text-muted directed-mobile ">Directed by</p>
                                             <p>{detailMovie.director}</p>
                                         </div>
                                         {/* casts */}
-                                        <div>
+                                        <div data-aos="fade-left" duration="800">
                                             <p className="text-muted mt-4">Casts</p>
                                             <p>
                                                 {detailMovie.cast.map((item, key) => (
@@ -104,7 +104,7 @@ function Detail() {
                                     </div>
                                 </div>
                                 <hr /> {/* hairline */}
-                                <div>
+                                <div data-aos="fade-up">
                                     {/* synopsis */}
                                     <h5>Synopsis</h5>
                                     <p className="synopsis-detail">{detailMovie.desc}</p>
