@@ -6,7 +6,7 @@ function Moviecomp(props) {
   return (
     <div data-aos="fade-up" data-aos-duration="500" className="text-center d-grid hover-bg padding-mobile">
     <img width={"50%"} className='movie-poster' src={poster} alt="poster" />
-    <p className="mt-3">{title}</p>
+    <b className="mt-3">{title}</b>
     <p className="text-secondary">
         {genres?.map((item, key) => (
             <span>{genres.length - 1 === key ? item : `${item},`}</span>

@@ -73,24 +73,24 @@ function Detail() {
                                     <div className="col-md-3 col-sm-12">
                                         {/* realease date */}
                                         <div data-aos="fade-left" duration="200">
-                                            <p className="text-muted ">Release date</p>
+                                            <b className="text-muted ">Release date</b>
                                             <p>{detailMovie.release}</p>
                                         </div>
                                         {/* duration */}
                                         <div data-aos="fade-left" duration="400">
-                                            <p className="text-muted mt-4">Duration</p>
+                                            <b className="text-muted mt-4">Duration</b>
                                             <p>{detailMovie.duration}</p>
                                         </div>
                                     </div>
                                     <div className="col-md-9 col-sm-12">
                                         {/* directed by */}
                                         <div data-aos="fade-left" duration="600">
-                                            <p className="text-muted directed-mobile ">Directed by</p>
+                                            <b className="text-muted directed-mobile ">Directed by</b>
                                             <p>{detailMovie.director}</p>
                                         </div>
                                         {/* casts */}
                                         <div data-aos="fade-left" duration="800">
-                                            <p className="text-muted mt-4">Casts</p>
+                                            <b className="text-muted mt-4">Casts</b>
                                             <p>
                                                 {detailMovie.cast.map((item, key) => (
                                                     <span>
