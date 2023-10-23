@@ -85,7 +85,7 @@ function home() {
                         <p className="text-primary">View All</p>
                     </div>
                     {/* <!-- Start Months --> */}
-                    <div className="d-flex gap-2 mt-5 justify-content-between scroll-card p-4">
+                    <div className="d-flex gap-2 mt-2 justify-content-between scroll-card p-4">
                         {[
                             "January",
                             "February",
@@ -116,7 +116,7 @@ function home() {
                     </div>
                     {/* <!-- End Months --> */}
 
-                    <div className="d-flex mt-6 mb-5 justify-content-between scroll-card gap-3 p-4">
+                    <div className="d-flex mb-5 justify-content-between scroll-card gap-3 p-4">
                             {result
                                 .filter((item) => item.isShowing === false || true)
                                 .filter((item) => item.showingMonth === selectedMonth)
@@ -155,7 +155,7 @@ function home() {
                 <div
                     data-aos="fade-up"
                     data-aos-duration="1000"
-                    className="container mt-10 mb-10 text-center shadow-lg p-5 rounded-2"
+                    className="container mt-3 mb-10 text-center shadow-lg p-5 rounded-2"
                 >
                     <p className="text-secondary">Be the vanguard of the</p>
                     <h2 className="text-primary">Moviegoers</h2>
