@@ -42,9 +42,11 @@ function Navbar() {
                                     </a>
                                 </li>
                             </ul>
+                            <Link to="/register">
                             <button className="btn btn-primary" type="submit">
                                 Sign Up
                             </button>
+                            </Link>
                         </div>
                     </div>
                 </nav>
