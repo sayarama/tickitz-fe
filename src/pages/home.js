@@ -45,7 +45,7 @@ function home() {
                     >
                         <img
                             className="w-75"
-                            src="/images/Hero Section/banner.png"
+                            src="/images/Hero/banner.png"
                             alt="Banner"
                         />
                     </div>
