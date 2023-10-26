@@ -28,10 +28,10 @@ function Register() {
         console.log("berhasil");
       })
       .catch((error) => {
-        const errFullname = error?.response?.data?.messages?.fullname;
-        const errEmail = error?.response?.data?.messages?.email;
-        const errPhoneNumber = error?.response?.data?.messages?.phoneNumber;
-        const errPassword = error?.response?.data?.messages?.password;
+        const errFullname = error?.response?.data?.messages?.fullname?.message;
+        const errEmail = error?.response?.data?.messages?.email?.message;
+        const errPhoneNumber = error?.response?.data?.messages?.phoneNumber?.message;
+        const errPassword = error?.response?.data?.messages?.password?.message;
         setIsSuccess(false);
         setErrMsg(
           errFullname ??
@@ -60,12 +60,18 @@ function Register() {
           <div className="right-box">
             <h1>Sign Up</h1>
             <p className="text-secondary mb-4">Fill your additional details</p>
-            <div className="alert alert-success" role="alert">
-              <p>Register Account Sucess. Please Check Your Email</p>
-            </div>
-            <div className="alert alert-danger" role="alert">
-              <p></p>
-            </div>
+
+            {isSuccess ? (
+              <div className="alert alert-success" role="alert">
+                <p>Register Account Sucess. Please Check Your Email</p>
+              </div>
+            ) : null}
+
+            {errMsg ? (
+              <div className="alert alert-danger" role="alert">
+                {errMsg}
+              </div>
+            ) : null}
             <div class="mb-4">
               <label for="exampleFormControlInput1" className="form-label">
                 Full Name
