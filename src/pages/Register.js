@@ -135,7 +135,7 @@ function Register() {
             </button>
             <p className="text-center mt-3">
               Already have account?{" "}
-              <Link>
+              <Link to="/login">
                 <span style={{ color: "#5F2EEA", textDecoration: "underline" }}>
                   Sign In
                 </span>
