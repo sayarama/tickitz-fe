@@ -1,9 +1,10 @@
 import axios from "axios";
 import "../style/Auth.css";
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function Register() {
+  const navigate = useNavigate();
   const [fullName, setFullName] = React.useState("");
   const [phoneNumber, setPhoneNumber] = React.useState("");
   const [email, setEmail] = React.useState("");
@@ -11,6 +12,12 @@ function Register() {
   const [isLoading, setIsLoading] = React.useState(false);
   const [isSuccess, setIsSuccess] = React.useState(false);
   const [errMsg, setErrMsg] = React.useState(null);
+
+  React.useEffect(() => {
+    if(localStorage.getItem("token") && localStorage.getItem("profile")) {
+        navigate("/");
+    }
+}, []);
 
   const handleRegister = () => {
     setIsLoading(true);
@@ -25,7 +32,6 @@ function Register() {
       })
       .then(() => {
         setIsSuccess(true);
-        console.log("berhasil");
       })
       .catch((error) => {
         const errFullname = error?.response?.data?.messages?.fullname?.message;

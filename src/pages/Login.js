@@ -1,14 +1,21 @@
 import React from "react";
 import "../style/Auth.css";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function Login() {
+    const navigate = useNavigate();
     const [email, setEmail] = React.useState("");
     const [password, setPassword] = React.useState("");
     const [isLoading, setIsLoading] = React.useState(false);
     const [isSuccess, setIsSuccess] = React.useState(false);
     const [errMsg, setErrMsg] = React.useState(null);
+
+    React.useEffect(() => {
+        if (localStorage.getItem("token") && localStorage.getItem("profile")) { 
+            navigate("/");
+        }
+    }, []);
 
     const handleLogin = () => {
         setIsLoading(true);
@@ -19,8 +26,17 @@ function Login() {
                 email: email,
                 password: password,
             })
-            .then(() => {
+            .then((response) => {
+                const token = response?.data?.data?.token;
+                const profile = response?.data?.data?.result;
+
+                localStorage.setItem("token", token);
+                localStorage.setItem("profile", JSON.stringify(profile));
                 setIsSuccess(true);
+                
+                setTimeout(() => {
+                    window.location.reload();
+                  }, 2000)
             })
             .catch((error) => {
                 const errEmail = error?.response?.data?.messages?.email?.message;
