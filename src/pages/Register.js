@@ -16,21 +16,34 @@ function Register() {
     setIsLoading(true);
     setErrMsg(null);
 
-    axios.post("https://tickitz-be.onrender.com/rama/auth/register", {
-      email: email,
-      password: password,
-      fullname: fullName,
-      phone_number: phoneNumber,
-    }).then (() => {
-      setIsSuccess(true)
-      console.log("berhasil")
-    }).catch((error) => {
-      setIsSuccess(false)
-      setErrMsg("Something wrong in our app")
-      console.log("gagal", error)
-    }).finally(() => {
-      setIsLoading(false)
-    });
+    axios
+      .post("https://tickitz-be.onrender.com/rama/auth/register", {
+        email: email,
+        password: password,
+        fullname: fullName,
+        phone_number: phoneNumber,
+      })
+      .then(() => {
+        setIsSuccess(true);
+        console.log("berhasil");
+      })
+      .catch((error) => {
+        const errFullname = error?.response?.data?.messages?.fullname;
+        const errEmail = error?.response?.data?.messages?.email;
+        const errPhoneNumber = error?.response?.data?.messages?.phoneNumber;
+        const errPassword = error?.response?.data?.messages?.password;
+        setIsSuccess(false);
+        setErrMsg(
+          errFullname ??
+            errEmail ??
+            errPhoneNumber ??
+            errPassword ??
+            "Something wrong in our app"
+        );
+      })
+      .finally(() => {
+        setIsLoading(false);
+      });
   };
   return (
     <div id="page_register">
@@ -106,7 +119,12 @@ function Register() {
                 }}
               />
             </div>
-            <button onClick={handleRegister} type="button" disabled ={isLoading} class="btn btn-primary">
+            <button
+              onClick={handleRegister}
+              type="button"
+              disabled={isLoading}
+              class="btn btn-primary"
+            >
               {isLoading ? "Loading..." : "Sign Up"}
             </button>
             <p className="text-center mt-3">
