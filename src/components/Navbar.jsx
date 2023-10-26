@@ -2,6 +2,8 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 function Navbar() {
+    const [profile, setProfile] = React.useState(JSON.parse(localStorage.getItem("profile"))
+    );
   return (
     <div>
         {/* <!-- Header Navigation --> */}
@@ -42,11 +44,15 @@ function Navbar() {
                                     </a>
                                 </li>
                             </ul>
-                            <Link to="/register">
+                            {profile ? (
+                                <img src={profile?.photo} width="50px" height="50px" style={{background: "#e1e1e1", borderRadius: '50%'}}/>
+                            ) : (
+                                <Link to="/register">
                             <button className="btn btn-primary" type="submit">
                                 Sign Up
                             </button>
                             </Link>
+                            )}
                         </div>
                     </div>
                 </nav>

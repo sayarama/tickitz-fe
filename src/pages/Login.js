@@ -36,7 +36,7 @@ function Login() {
                 
                 setTimeout(() => {
                     window.location.reload();
-                  }, 2000)
+                }, 2000)
             })
             .catch((error) => {
                 const errEmail = error?.response?.data?.messages?.email?.message;
