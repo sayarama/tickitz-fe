@@ -15,7 +15,33 @@ function Detail() {
 
 
     // lifecycle
-    
+    const handleGetApi = async () => {
+        try {
+            // MovieDetail
+            const requestDetail = await axios.get(
+                `https://tickitz-be.onrender.com/aulia/movie/detail/${slug}`
+            );
+
+            if (requestDetail.data.data.length > 0) {
+                setDetailMovie(requestDetail.data.data[0]);
+            }
+
+            // CinemaDetail
+            const requestCinema = await axios.get(
+                `https://tickitz-be.onrender.com/aulia/movie/${slug}/cinemas`
+            );
+
+            if (requestCinema.data.data.length > 0) {
+                setListCinemas(requestCinema.data.data)
+            }
+        } catch (error) {
+            console.log(`error : ${error}`);
+        }
+    };
+
+    react.useEffect(() => {
+        handleGetApi();
+    }, [])
     return (
         <div id="detail-page">
             {/* Start Header */}
