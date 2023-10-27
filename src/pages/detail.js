@@ -26,6 +26,7 @@ function Detail() {
                 setDetailMovie(requestDetail.data.data[0]);
             }
 
+
             // CinemaDetail
             const requestCinema = await axios.get(
                 `https://tickitz-be.onrender.com/aulia/movie/${slug}/cinemas`
@@ -53,12 +54,14 @@ function Detail() {
                     <>
                         {/* Loading bar */}
                         <div className="text-center mt-10 loading-bar">
-                            <div class="lds-dual-ring"></div>
+                            <div className="spinner-border mb-2" role="status">
+                                <span className="visually-hidden">Loading...</span>
+                            </div>
                             <p>Loading...</p>
                         </div>
                     </>
                 ) : null}
-            </header>
+            
             {/* End Header */}
 
             {detailMovie !== null ? (
@@ -130,8 +133,21 @@ function Detail() {
                     {/* End Content */}
                 </>
             ) : null}
+            </header>
 
-<hr /> {/* hairline */}
+            {/* Cinema List */}
+            {detailMovie !== null ? (
+                <section className="container mt-5" id="cinemas">
+                    <h2 className="d-flex gap-3 justify-content-center mt-3">Showtimes and Tickets</h2>
+                    <div className="d-flex gap-3 justify-content-center mt-3">
+                        <div style={{width: "260px"}}>
+                            <input type="date" className="form-control" onChange={(e) => setDateMovie(e.target.value)}/>
+                        </div>
+                        <select className="form-select form-select-sm" onChange={(e) => setTimeMovie(e.target.value)} style={{width: "260px"}}></select>
+                    </div>
+                </section>
+            ) : null}
+            {/* Cinema End */}
 
             {/* Start Footer */}
             <Footer />

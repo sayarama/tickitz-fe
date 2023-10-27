@@ -27,6 +27,7 @@ function home() {
             if (nowShowing.status === 200) {
                 setResultNowShowing(nowShowing.data.data);
             }
+            console.log('api response', nowShowing.data)
 
             // UpcomingData
             const upcoming = await axios.get(
