@@ -22,7 +22,7 @@ function Login() {
         setErrMsg(null);
 
         axios
-            .post("https://tickitz-be.onrender.com/rama/auth/login", {
+            .post("https://tickitz-be.onrender.com/aulia/auth/login", {
                 email: email,
                 password: password,
             })

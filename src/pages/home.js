@@ -10,7 +10,7 @@ AOS.init();
 
 function home() {
     const date = new Date();
-    const month = date.toLocaleDateString("default", { month: "long" });
+    const month = date.toLocaleDateString("default", { month: "short" });
 
     const [result, setResult] = react.useState([]);
     const [selectedMonth, setSelectedMonth] = react.useState(month.toLowerCase());
@@ -87,18 +87,18 @@ function home() {
                     {/* <!-- Start Months --> */}
                     <div className="d-flex gap-2 mt-2 justify-content-between scroll-card p-4">
                         {[
-                            "January",
-                            "February",
-                            "March",
-                            "April",
+                            "Jan",
+                            "Feb",
+                            "Mar",
+                            "Apr",
                             "May",
-                            "June",
-                            "July",
-                            "August",
-                            "September",
-                            "October",
-                            "November",
-                            "December",
+                            "Jun",
+                            "Jul",
+                            "Aug",
+                            "Sep",
+                            "Oct",
+                            "Nov",
+                            "Dec",
                         ].map((item) => (
                             <button
                                 className={
