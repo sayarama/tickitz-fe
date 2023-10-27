@@ -99,18 +99,18 @@ function home() {
                     {/* <!-- Start Months --> */}
                     <div className="d-flex gap-2 mt-2 justify-content-between scroll-card p-4">
                         {[
-                            "Jan",
-                            "Feb",
-                            "Mar",
-                            "Apr",
+                            "January",
+                            "February",
+                            "March",
+                            "April",
                             "May",
-                            "Jun",
-                            "Jul",
-                            "Aug",
-                            "Sep",
-                            "Oct",
-                            "Nov",
-                            "Dec",
+                            "June",
+                            "July",
+                            "August",
+                            "September",
+                            "October",
+                            "November",
+                            "December",
                         ].map((item) => (
                             <button
                                 className={

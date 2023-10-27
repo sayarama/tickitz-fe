@@ -1,32 +1,21 @@
 import react from "react";
 import axios from "axios";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Footer from "../components/footer";
 import "../style/App.css"
 
 function Detail() {
-    const { id } = useParams();
+    const { slug } = useParams();
+    const navigate = useNavigate();
     const [detailMovie, setDetailMovie] = react.useState(null);
+    const [listCinemas, setListCinemas] = react.useState([]);
+    const [dateMovie, setDateMovie] = react.useState(null);
+    const [timeMovie, setTimeMovie] = react.useState(null);
+
 
     // lifecycle
-    react.useEffect(() => {
-        setTimeout(() => {
-            axios
-                .get("http://localhost:3000/api/movie.json")
-                .then((response) => {
-                    if (response.status === 200) {
-                        // search data from api and compare with id
-                        setDetailMovie(
-                            response.data.find(
-                                (item) => item.title.toLowerCase().split(" ").join("-") === id
-                            )
-                        );
-                    }
-                })
-                .catch((error) => console.log(`error: ${error}`));
-        }, 1000);
-    }, []);
+    
     return (
         <div id="detail-page">
             {/* Start Header */}
