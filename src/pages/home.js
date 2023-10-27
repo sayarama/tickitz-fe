@@ -12,25 +12,43 @@ function home() {
     const date = new Date();
     const month = date.toLocaleDateString("default", { month: "short" });
 
-    const [result, setResult] = react.useState([]);
+    const [resultNowShowing, setResultNowShowing] = react.useState([]);
+    const [resultUpcoming, setResultUpcoming] = react.useState([]);
     const [selectedMonth, setSelectedMonth] = react.useState(month.toLowerCase());
 
     // lifecycle
-    react.useEffect(() => {
-        axios
-            .get("http://localhost:3000/api/movie.json")
-            .then((response) => {
-                if (response.status === 200) {
-                    setResult(response.data);
-                }
-            })
-            .catch((error) => console.log(`error: ${error}`));
-    });
-  return (
-    <div className="app">
+    const handleGetResponse = async () => {
+        try {
+            // ShowingData
+            const nowShowing = await axios.get(
+                "https://tickitz-be.onrender.com/v1/movie/now-showing"
+            );
 
-        <Navbar/>
-        
+            if (nowShowing.status === 200) {
+                setResultNowShowing(nowShowing.data.data);
+            }
+
+            // UpcomingData
+            const upcoming = await axios.get(
+                "https://tickitz-be.onrender.com/v1/movie/upcoming"
+            );
+
+            if (upcoming.status === 200) {
+                setResultUpcoming(upcoming.data.data);
+            }
+        } catch (error) {
+            console.log(error);
+        }
+    };
+
+    react.useEffect(() => {
+        handleGetResponse();
+    });
+
+    return (
+        <div className="app">
+            <Navbar />
+
             {/* <!-- Hero Section --> */}
             <nav className="container">
                 <div className="row hero-mobile align-items-center mt-10 mb-10">
@@ -43,11 +61,7 @@ function home() {
                         data-aos-duration="1500"
                         className="col-lg-6 text-center"
                     >
-                        <img
-                            className="w-75"
-                            src="/images/Hero/banner.png"
-                            alt="Banner"
-                        />
+                        <img className="w-75" src="/images/Hero/banner.png" alt="Banner" />
                     </div>
                 </div>
             </nav>
@@ -61,17 +75,14 @@ function home() {
                         <p className="text-primary">View All</p>
                     </div>
                     <div className="d-flex mt-6 mb-5 justify-content-between scroll-card gap-3 p-4">
-                        {result
-                                .filter((item) => item.isShowing === false || true)
-                                .slice(0, 5)
-                                .map((item) => (
-                                    <MovieComp
-                                        poster={item.poster}
-                                        title={item.title}
-                                        genres={item.genres}
-                                        desc={item.desc}
-                                    />
-                                ))}
+                        {resultNowShowing.slice(0, 5).map((item) => (
+                            <MovieComp
+                                poster={item.poster}
+                                title={item.title}
+                                genres={item.genres}
+                                desc={item.desc}
+                            />
+                        ))}
                     </div>
                 </div>
             </section>
@@ -117,23 +128,21 @@ function home() {
                     {/* <!-- End Months --> */}
 
                     <div className="d-flex mb-5 justify-content-between scroll-card gap-3 p-4">
-                            {result
-                                .filter((item) => item.isShowing === false || true)
-                                .filter((item) => item.showingMonth === selectedMonth)
-                                .slice(0, 5)
-                                .map((item) => (
-                                    <MovieComp
-                                        poster={item.poster}
-                                        title={item.title}
-                                        genres={item.genres}
-                                        desc={item.desc}
-                                    />
-                                ))}
+                        {resultUpcoming
+                            .filter((item) => item.showingMonth === selectedMonth)
+                            .slice(0, 5)
+                            .map((item) => {
+                                <MovieComp
+                                    poster={item.poster}
+                                    title={item.title}
+                                    genres={item.genres}
+                                    desc={item.desc}
+                                />;
+                            })}
                         {/* Movie Not Found */}
-                        {result
-                            .filter((item) => item.isShowing === false || true)
-                            .filter((item) => item.showingMonth === selectedMonth).length ===
-                            0 ? (
+                        {resultUpcoming.filter(
+                            (item) => item.showingMonth === selectedMonth
+                        ).length === 0 ? (
                             <div className="d-flex align-items-center m-auto flex-column">
                                 <img
                                     style={{
@@ -171,9 +180,9 @@ function home() {
             </section>
             {/* <!-- End CTA --> */}
 
-            <Footer/>            
+            <Footer />
         </div>
-  )
+    );
 }
 
-export default home
+export default home;
