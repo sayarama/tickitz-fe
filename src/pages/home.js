@@ -21,7 +21,7 @@ function home() {
         try {
             // ShowingData
             const nowShowing = await axios.get(
-                "https://tickitz-be.onrender.com/v1/movie/now-showing"
+                "https://tickitz-be.onrender.com/aulia/movie/now-showing"
             );
 
             if (nowShowing.status === 200) {
@@ -30,7 +30,7 @@ function home() {
 
             // UpcomingData
             const upcoming = await axios.get(
-                "https://tickitz-be.onrender.com/v1/movie/upcoming"
+                "https://tickitz-be.onrender.com/aulia/movie/upcoming"
             );
 
             if (upcoming.status === 200) {
@@ -43,7 +43,7 @@ function home() {
 
     react.useEffect(() => {
         handleGetResponse();
-    });
+    }, []);
 
     return (
         <div className="app">
@@ -81,6 +81,7 @@ function home() {
                                 title={item.title}
                                 genres={item.genres}
                                 desc={item.desc}
+                                slug={item.slug}
                             />
                         ))}
                     </div>
@@ -128,17 +129,21 @@ function home() {
                     {/* <!-- End Months --> */}
 
                     <div className="d-flex mb-5 justify-content-between scroll-card gap-3 p-4">
-                        {resultUpcoming
-                            .filter((item) => item.showingMonth === selectedMonth)
-                            .slice(0, 5)
-                            .map((item) => {
-                                <MovieComp
-                                    poster={item.poster}
-                                    title={item.title}
-                                    genres={item.genres}
-                                    desc={item.desc}
-                                />;
-                            })}
+                        <div className="d-flex gap-3 justify-content-around mt-5 mt-10-mobile">
+                            {resultUpcoming
+                                .filter((item) => item.showingMonth === selectedMonth)
+                                .slice(0, 5)
+                                .map((item) => (
+                                    <MovieComp
+                                        poster={item.poster}
+                                        title={item.title}
+                                        genres={item.genres}
+                                        desc={item.desc}
+                                        slug={item.slug}
+                                    />
+                                ))}
+                        </div>
+
                         {/* Movie Not Found */}
                         {resultUpcoming.filter(
                             (item) => item.showingMonth === selectedMonth
