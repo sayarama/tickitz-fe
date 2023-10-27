@@ -46,7 +46,7 @@ function Detail() {
     return (
         <div id="detail-page">
             {/* Start Header */}
-            <header className="container pt-4 pb-4">
+            <header className="container pt-4 pb-4 mobile-detail">
                 {/* Navigation Bar */}
                 <Navbar />
 
@@ -103,7 +103,7 @@ function Detail() {
                                     <div className="col-md-9 col-sm-12">
                                         {/* directed by */}
                                         <div data-aos="fade-left" duration="600">
-                                            <b className="text-muted directed-mobile ">Directed by</b>
+                                            <b className="text-muted directed-mobile">Directed by</b>
                                             <p>{detailMovie.director}</p>
                                         </div>
                                         {/* casts */}
@@ -143,7 +143,26 @@ function Detail() {
                         <div style={{width: "260px"}}>
                             <input type="date" className="form-control" onChange={(e) => setDateMovie(e.target.value)}/>
                         </div>
-                        <select className="form-select form-select-sm" onChange={(e) => setTimeMovie(e.target.value)} style={{width: "260px"}}></select>
+                        <select className="form-select form-select-sm" onChange={(e) => setTimeMovie(e.target.value)} style={{width: "260px"}}>
+                            <option selected>Select Time</option>
+                            <option>10:00 WIB</option>
+                            <option>13:00 WIB</option>
+                            <option>16:00 WIB</option>
+                            <option>19:00 WIB</option>
+                        </select>
+                    </div>
+                    <div className="row mt-5">
+                        {listCinemas.map((item) => (
+                            <div className="col col-md-4">
+                                <div className="card-cinemas">
+                                    <div className="">
+                                        <img src={item.logo} width="140px" height="50px" alt={item.name}
+                                        style={{objectFit: "contain"}}
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
                     </div>
                 </section>
             ) : null}

@@ -180,6 +180,15 @@ p{
     border-radius: 15px;
 }
 
+.card_cinemas {
+    width: 100%;
+    background-color: white;
+    box-shadow: 0px 0px 13px -1px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0px 0px 13px -1px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0px 0px 13px -1px rgba(0, 0, 0, 0.1);
+    border-radius: 7px;
+  }
+
 
 @media screen and (max-width: 986px) {
     .footer-mobile{
