@@ -6,6 +6,7 @@ import Detail from "./pages/detail";
 import Login from "./pages/Login";
 import Register from "./pages/Register"
 import ChooseSeat from "./pages/ChooseSeat"
+import ForgotPassword from "./pages/ForgotPassword";
 
 const router = createBrowserRouter([
     {
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
     {
         path: "/choose-seat/:slug",
         element: <ChooseSeat/>
+    },
+    {
+        path: "/forgot-password",
+        element: <ForgotPassword/>
     }
 ])
 

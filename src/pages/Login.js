@@ -111,13 +111,22 @@ function Login() {
                             {isLoading ? "Loading..." : "Sign Up"}
                         </button>
                         <p className="text-center mt-3">
-                            Already have account?{" "}
-                            <Link to="/login">
+                            Don't have an account?{" "}
+                            <Link to="/register">
                                 <span style={{ color: "#5F2EEA", textDecoration: "underline" }}>
-                                    Sign In
+                                    Reset Password
                                 </span>
                             </Link>
                         </p>
+                        <p className="text-center mt-3">
+                            Don't have an account?{" "}
+                            <Link to="/register">
+                                <span style={{ color: "#5F2EEA", textDecoration: "underline" }}>
+                                    Sign Up
+                                </span>
+                            </Link>
+                        </p>
+                        
                     </div>
                 </div>
             </div>
