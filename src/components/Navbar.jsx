@@ -34,9 +34,9 @@ function Navbar() {
                         >
                             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                                 <li className="nav-item nav-text">
-                                    <a className="nav-link" href="#">
-                                        Home
-                                    </a>
+                                    <Link className='nav-link' to= "/">
+                                        <p>Home</p>
+                                    </Link>
                                 </li>
                                 <li className="nav-item nav-text">
                                     <a className="nav-link" href="#">

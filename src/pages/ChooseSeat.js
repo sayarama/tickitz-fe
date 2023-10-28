@@ -4,161 +4,10 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/footer";
 import axios from "axios";
 import moment from "moment/moment";
+import RowSeat from "../components/RowSeat";
+import RowSeatNumber from "../components/RowSeatNumber";
 import { useParams, useLocation, useNavigate } from "react-router-dom";
 
-function RowSeat({ position, selectedSeat, setSelectedSeat, bookedSeat }) {
-    const getSeatColor = (key) => {
-        if (bookedSeat?.find((_item) => _item === `${position}${key}`)) {
-            return "#6E7191"; // booked
-        } else if (selectedSeat?.find((_item) => _item === `${position}${key}`)) {
-            return "#5F2EEA"; // purple
-        } else {
-            return "#D6D8E7"; // gray
-        }
-    };
-
-    const checkIfDisabled = (key) => {
-        if (bookedSeat?.find((_item) => _item === `${position}${key}`)) {
-            return true; // booked
-        } else if (selectedSeat?.find((_item) => _item === `${position}${key}`)) {
-            return true; // purple
-        } else {
-            return false; // gray
-        }
-    };
-
-    return (
-        <div
-            style={{
-                display: "flex",
-                justifyContent: "space-between",
-                marginTop: "20px",
-            }}
-        >
-            <p>{position}</p>
-            {/* left */}
-            <div
-                style={{
-                    display: "flex",
-                    width: "40%",
-                    justifyContent: "space-between",
-                }}
-            >
-                {[...new Array(7)].map((item, key) => {
-                    const nextKey = ++key;
-
-                    return (
-                        <div
-                            style={{
-                                background: getSeatColor(nextKey),
-                                borderRadius: "5px",
-                                width: "25px",
-                                height: "25px",
-                                cursor: "pointer",
-                            }}
-                            onClick={() => {
-                                if (!checkIfDisabled(nextKey)) {
-                                    setSelectedSeat([
-                                        ...selectedSeat,
-                                        ...[`${position}${nextKey}`],
-                                    ]);
-                                }
-                            }}
-                        ></div>
-                    );
-                })}
-            </div>
-            {/* right */}
-            <div
-                style={{
-                    display: "flex",
-                    width: "40%",
-                    justifyContent: "space-between",
-                }}
-            >
-                {[...new Array(7)].map((item, key) => {
-                    const keyPage2 = ++key + 7;
-
-                    return (
-                        <div
-                            style={{
-                                background: getSeatColor(keyPage2),
-                                borderRadius: "5px",
-                                width: "25px",
-                                height: "25px",
-                                cursor: "pointer",
-                            }}
-                            onClick={() => {
-                                if (!checkIfDisabled(keyPage2)) {
-                                    setSelectedSeat([
-                                        ...selectedSeat,
-                                        ...[`${position}${keyPage2}`],
-                                    ]);
-                                }
-                            }}
-                        />
-                    );
-                })}
-            </div>
-        </div>
-    );
-}
-
-function RowSeatNumber() {
-    return (
-        <div
-            style={{
-                display: "flex",
-                justifyContent: "space-between",
-                marginTop: "20px",
-            }}
-        >
-            <p></p>
-            {/* left */}
-            <div
-                style={{
-                    display: "flex",
-                    width: "40%",
-                    justifyContent: "space-between",
-                }}
-            >
-                {[...new Array(7)].map((item, key) => (
-                    <div
-                        style={{
-                            width: "25px",
-                            height: "25px",
-                        }}
-                    >
-                        <p>{1 + key}</p>
-                    </div>
-                ))}
-            </div>
-            {/* right */}
-            <div
-                style={{
-                    display: "flex",
-                    width: "40%",
-                    justifyContent: "space-between",
-                }}
-            >
-                {[...new Array(7)].map((item, key) => {
-                    const nextKey = key + 8;
-
-                    return (
-                        <div
-                            style={{
-                                width: "25px",
-                                height: "25px",
-                            }}
-                        >
-                            <p>{nextKey}</p>
-                        </div>
-                    );
-                })}
-            </div>
-        </div>
-    );
-}
 
 function ChooseSeat() {
     const {
@@ -184,7 +33,7 @@ function ChooseSeat() {
         try {
             const formatDate = moment(dateMovie).format("dddd, DD MMMM YYYY");
             const requestSeat = await axios.post(
-                `https://tickitz-be.onrender.com/v1/movie/${slug}/seat`,
+                `https://tickitz-be.onrender.com/aulia/movie/${slug}/seat`,
                 {
                     startMovie: `${formatDate} at ${timeMovie}`,
                     cinemaId: cinemaId,
@@ -206,7 +55,7 @@ function ChooseSeat() {
             const formatDate = moment(dateMovie).format("dddd, DD MMMM YYYY");
             const completeDate = `${formatDate} at ${timeMovie}`;
             const requestBooking = await axios.post(
-                `https://tickitz-be.onrender.com/v1/ticket/seat`,
+                `https://tickitz-be.onrender.com/aulia/ticket/seat`,
                 {
                     movieSlug: slug,
                     cinemaId: cinemaId, // 1, 3, 3
@@ -222,7 +71,7 @@ function ChooseSeat() {
 
             if (requestBooking.data.data.paymentId) {
                 const requestPayment = await axios.patch(
-                    `https://tickitz-be.onrender.com/v1/ticket/purchase/${requestBooking.data.data.paymentId}`,
+                    `https://tickitz-be.onrender.com/aulia/ticket/purchase/${requestBooking.data.data.paymentId}`,
                     {},
                     {
                         headers: {
@@ -245,7 +94,7 @@ function ChooseSeat() {
     React.useEffect(() => {
         // handle hanya yang sudah login aja
         if (!localStorage.getItem("token") && !localStorage.getItem("profile")) {
-            if (window.confirm("Silahkan login terlebih dahulu")) {
+            if (window.confirm("Please Login First!!!")) {
                 navigate("/");
             }
         }
@@ -373,7 +222,7 @@ function ChooseSeat() {
                                 </div>
                             </section>
                         </div>
-                        <div className="col col-md-4">
+                        <div className="col col-md-4 mb-5">
                             <h2
                                 className="mb-3"
                                 style={{ fontSize: "24px", fontWeight: "bolder" }}
@@ -387,7 +236,7 @@ function ChooseSeat() {
                                     borderRadius: "10px",
                                 }}
                             >
-                                <div style={{ padding: "20px 20px 0px 20px" }}>
+                                <div className="p-3">
                                     <div className="d-flex justify-content-center w-100 mb-2">
                                         <img src={cinemaLogo} width="100px" alt="logo" />
                                     </div>
@@ -437,8 +286,8 @@ function ChooseSeat() {
                                 <hr />
 
                                 <div
-                                    className="d-flex justify-content-between"
-                                    style={{ padding: "0px 20px 0px 20px" }}
+                                    className="d-flex p-3 justify-content-between"
+                                    
                                 >
                                     <p style={{ fontWeight: "bold" }}>Total Payment</p>
                                     <p
