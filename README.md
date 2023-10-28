@@ -2,13 +2,13 @@
 
 a website that can help us order movie tickets.
 
-##Tech
+## Tech
 -React
 -Bootstrap
 -Nodejs
 -Axios
 
-##Installation
+## Installation
 
 First of all, you have to clone this git using.
 
