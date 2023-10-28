@@ -78,7 +78,7 @@ function Register() {
                 {errMsg}
               </div>
             ) : null}
-            <div class="mb-4">
+            <div className="mb-4">
               <label for="exampleFormControlInput1" className="form-label">
                 Full Name
               </label>
@@ -91,7 +91,7 @@ function Register() {
                 }}
               />
             </div>
-            <div class="mb-4">
+            <div className="mb-4">
               <label for="exampleFormControlInput1" className="form-label">
                 Phone Number
               </label>
@@ -104,7 +104,7 @@ function Register() {
                 }}
               />
             </div>
-            <div class="mb-4">
+            <div className="mb-4">
               <label for="exampleFormControlInput1" className="form-label">
                 Email
               </label>
@@ -117,7 +117,7 @@ function Register() {
                 }}
               />
             </div>
-            <div class="mb-4">
+            <div className="mb-4">
               <label for="exampleFormControlInput1" className="form-label">
                 Password
               </label>
@@ -135,7 +135,7 @@ function Register() {
               onClick={handleRegister}
               type="button"
               disabled={isLoading}
-              class="btn btn-primary"
+              className="btn btn-primary"
             >
               {isLoading ? "Loading..." : "Sign Up"}
             </button>
