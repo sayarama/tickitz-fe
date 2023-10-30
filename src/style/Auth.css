@@ -28,6 +28,10 @@
 }
 
 @media screen and (max-width: 986px) {
+.left-box {
+    width: 100vw;
+}
+
 .white-tickitz {
     width: 70%;
 }
