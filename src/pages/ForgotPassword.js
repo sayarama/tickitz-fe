@@ -41,7 +41,7 @@ function ForgotPassword() {
   };
 
   return (
-    <div id="page-register">
+    <div id="page_password">
             <div className="row">
                 {/* left Banner */}
                 <div className="col col-md-7">

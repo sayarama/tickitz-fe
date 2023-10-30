@@ -1,5 +1,4 @@
 import React from 'react'
-import RowSeatNumber from './RowSeatNumber';
 
 function RowSeat({ position, selectedSeat, setSelectedSeat, bookedSeat }) {
     const getSeatColor = (key) => {
