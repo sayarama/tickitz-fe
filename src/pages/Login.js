@@ -61,7 +61,7 @@ function Login() {
                 {/* Right  */}
                 <div className="col col-md-5">
                     <div className="right-box">
-                        <h1>Sign Up</h1>
+                        <h1>Sign In</h1>
                         <p className="text-secondary mb-4">Fill your additional details</p>
 
                         {isSuccess ? (
@@ -111,7 +111,7 @@ function Login() {
                             {isLoading ? "Loading..." : "Sign Up"}
                         </button>
                         <p className="text-center mt-3">
-                            Forgot you password?{" "}
+                            Forgot your password?{" "}
                             <Link to="/forgot-password">
                                 <span style={{ color: "#5F2EEA", textDecoration: "underline" }}>
                                     Reset Password
