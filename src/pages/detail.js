@@ -164,8 +164,8 @@ function Detail() {
                     </div>
                     <div className="row mt-5">
                         {listCinemas.map((item) => (
-                            <div className="col col-md-4">
-                                <div className="cinema-card">
+                            <div className="col col-xl-4">
+                                <div className="cinema-card mb-4">
                                     {/* head content */}
                                     <div
                                         style={{
@@ -177,7 +177,7 @@ function Detail() {
                                     >
                                         <img
                                             src={item.logo}
-                                            width="140px"
+                                            width="100px"
                                             height="50px"
                                             alt={item.name}
                                             style={{ objectFit: "contain" }}
