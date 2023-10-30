@@ -1,5 +1,5 @@
 .left-box{
-    width:100%;
+    width:100vw;
     height: 100vh;
     background-image: url(/public/images/Hero/background-regis.png);
     background-size: cover;
@@ -25,4 +25,10 @@
 
 .right-box button{
     padding: 15px;
+}
+
+@media screen and (max-width: 986px) {
+.white-tickitz {
+    width: 70%;
+}
 }

@@ -46,7 +46,7 @@ function ForgotPassword() {
                 {/* left Banner */}
                 <div className="col col-md-7">
                     <div className="left-box">
-                        <img src="/images/Logo/tickitz-white.png" />
+                        <img className="white-tickitz" src="/images/Logo/tickitz-white.png" />
                         <h2>Wait, Watch, Wow!</h2>
                     </div>
                 </div>
