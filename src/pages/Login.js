@@ -108,7 +108,7 @@ function Login() {
                             disabled={isLoading}
                             class="btn btn-primary"
                         >
-                            {isLoading ? "Loading..." : "Sign Up"}
+                            {isLoading ? "Loading..." : "Sign In"}
                         </button>
                         <p className="text-center mt-3">
                             Forgot your password?{" "}

@@ -9,7 +9,7 @@
 }
 
 #page_password{
-    overflow-x: hidden;
+        overflow-x: hidden;
     overflow-y: hidden;
 }
 
@@ -42,12 +42,12 @@
     padding: 15px;
 }
 
-@media screen and (max-width: 986px) {
-.left-box {
+@media screen and (max-width: 767px) {
+    .left-box {
     width: 100vw;
 }
 
-.white-tickitz {
+    .white-tickitz {
     width: 70%;
 }
 }

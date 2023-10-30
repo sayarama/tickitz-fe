@@ -53,12 +53,12 @@ function ForgotPassword() {
                 {/* Right  */}
                 <div className="col col-md-5">
                     <div className="right-box">
-                        <h1>Sign Up</h1>
-                        <p className="text-secondary mb-4">Fill your additional details</p>
+                        <h1>Reset Password</h1>
+                        <p className="text-secondary mb-4">Fill your email to verification</p>
 
                         {isSuccess ? (
                             <div className="alert alert-success" role="alert">
-                                <p>Login success, please wait for redirect to our app</p>
+                                <p>Reset success please wait for the email.</p>
                             </div>
                         ) : null}
 
@@ -86,7 +86,7 @@ function ForgotPassword() {
                             disabled={isLoading}
                             class="btn btn-primary"
                         >
-                            {isLoading ? "Loading..." : "Sign Up"}
+                            {isLoading ? "Loading..." : "Reset"}
                         </button>
                         <p className="text-center mt-3">
                             Already set new password?{" "}

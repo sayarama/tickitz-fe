@@ -40,7 +40,7 @@ function RowSeat({ position, selectedSeat, setSelectedSeat, bookedSeat }) {
 
                     return (
                         <div
-                            className='left-box'
+                            className='left-seat'
                             style={{
                                 background: getSeatColor(nextKey),
                                 
