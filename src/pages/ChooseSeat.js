@@ -1,5 +1,5 @@
 import React from "react";
-
+import '../style/Seat.css'
 import Navbar from "../components/Navbar";
 import Footer from "../components/footer";
 import axios from "axios";
@@ -140,12 +140,7 @@ function ChooseSeat() {
                                     Choose Your Seat
                                 </h2>
                                 <div
-                                    style={{
-                                        backgroundColor: "#fff",
-                                        borderRadius: "10px",
-                                        padding: "100px 200px 100px 200px",
-                                        marginBottom: "30px",
-                                    }}
+                                    className="choose-box"
                                 >
                                     {/* screen */}
                                     <p className="text-center" style={{ marginLeft: "10%" }}>

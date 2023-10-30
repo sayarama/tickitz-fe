@@ -1,0 +1,33 @@
+.seat-flex{
+    display: flex;
+    justify-content:space-between;
+    margin-top: 20px;
+    background-color: aquamarine;
+}
+
+.choose-box{
+    background: white;
+    border-radius: 10px;
+    padding: 100px 200px 100px 200px;
+    margin-bottom: 30px;
+}
+
+.left-box{
+    border-radius: 5px;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+}
+
+.right{
+    border-radius: 5px;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 1399px) {
+    .seat-flex{
+        
+    }
+}

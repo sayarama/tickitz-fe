@@ -42,9 +42,10 @@ function Detail() {
         handleGetApi();
     }, []);
     return (
+        <>
         <div id="detail-page">
             {/* Start Header */}
-            <header className="container pt-4 pb-4 mobile-detail">
+            <header className="container pt-4 mobile-detail">
                 {/* Navigation Bar */}
                 <Navbar />
 
@@ -65,8 +66,8 @@ function Detail() {
                 {detailMovie !== null ? (
                     <>
                         {/* Start Content */}
-                        <section id="content_detail" className="container mt-4 mb-4">
-                            <div className="d-flex mobile-detail mb-10 gap-5">
+                        <section id="content_detail" className="container mt-4">
+                            <div className="d-flex mobile-detail gap-5">
                                 <div className="border-poster" data-aos="fade-left">
                                     <img
                                         className="detail-poster"
@@ -137,7 +138,7 @@ function Detail() {
 
             {/* Cinema List */}
             {detailMovie !== null ? (
-                <section className="container mt-5" id="cinemas">
+                <section className="container mb-5 mt-5 pt-5 pb-5" id="cinemas">
                     <h2 className="d-flex gap-3 justify-content-center mt-3">
                         Showtimes and Tickets
                     </h2>
@@ -263,10 +264,11 @@ function Detail() {
             ) : null}
             {/* Cinema End */}
 
-            {/* Start Footer */}
-            <Footer />
-            {/* End Footer */}
+
         </div>
+        <Footer/>
+        </>
+        
     );
 }
 

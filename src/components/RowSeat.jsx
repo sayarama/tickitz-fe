@@ -1,4 +1,5 @@
 import React from 'react'
+import '../style/Seat.css'
 
 function RowSeat({ position, selectedSeat, setSelectedSeat, bookedSeat }) {
     const getSeatColor = (key) => {
@@ -23,18 +24,14 @@ function RowSeat({ position, selectedSeat, setSelectedSeat, bookedSeat }) {
 
     return (
         <div
-            style={{
-                display: "flex",
-                justifyContent: "space-between",
-                marginTop: "20px",
-            }}
+            className='seat-flex'
         >
             <p>{position}</p>
             {/* left */}
             <div
                 style={{
                     display: "flex",
-                    width: "40%",
+                    width: "200px",
                     justifyContent: "space-between",
                 }}
             >
@@ -43,12 +40,10 @@ function RowSeat({ position, selectedSeat, setSelectedSeat, bookedSeat }) {
 
                     return (
                         <div
+                            className='left-box'
                             style={{
                                 background: getSeatColor(nextKey),
-                                borderRadius: "5px",
-                                width: "25px",
-                                height: "25px",
-                                cursor: "pointer",
+                                
                             }}
                             onClick={() => {
                                 if (!checkIfDisabled(nextKey)) {
@@ -66,7 +61,7 @@ function RowSeat({ position, selectedSeat, setSelectedSeat, bookedSeat }) {
             <div
                 style={{
                     display: "flex",
-                    width: "40%",
+                    width: "200px",
                     justifyContent: "space-between",
                 }}
             >
@@ -75,12 +70,9 @@ function RowSeat({ position, selectedSeat, setSelectedSeat, bookedSeat }) {
 
                     return (
                         <div
+                            className='right'
                             style={{
                                 background: getSeatColor(keyPage2),
-                                borderRadius: "5px",
-                                width: "25px",
-                                height: "25px",
-                                cursor: "pointer",
                             }}
                             onClick={() => {
                                 if (!checkIfDisabled(keyPage2)) {
