@@ -111,8 +111,8 @@ function Login() {
                             {isLoading ? "Loading..." : "Sign Up"}
                         </button>
                         <p className="text-center mt-3">
-                            Don't have an account?{" "}
-                            <Link to="/register">
+                            Forgot you password?{" "}
+                            <Link to="/forgot-password">
                                 <span style={{ color: "#5F2EEA", textDecoration: "underline" }}>
                                     Reset Password
                                 </span>
