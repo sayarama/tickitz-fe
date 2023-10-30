@@ -53,7 +53,7 @@ function Navbar() {
                             </ul>
                             {profile ? (
                                 <div>
-                                      <button className="btn btn-primary" onClick={handleLogout}>Logout</button>
+                                      <button className="btn btn-primary" style={{marginRight: "10px"}} onClick={handleLogout}>Logout</button>
                                      <img src={profile?.photo} width="50px" height="50px" style={{background: "#e1e1e1", borderRadius: '50%'}}/>
                                    
                                 </div>
