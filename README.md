@@ -76,7 +76,7 @@ npm install
     <image src="https://i.ibb.co/7Sdb473/signin.png" alt="Sign In" width=100%>
   </td>
   <td>
-    <image src="https://i.ibb.co/7Sdb473/signin.png" alt="Sign Up" width=100%>
+    <image src="https://i.ibb.co/Dz66Tyn/signup.png" alt="Sign Up" width=100%>
   </td>
 </tr>
 </table>
