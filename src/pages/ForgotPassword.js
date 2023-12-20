@@ -14,7 +14,7 @@ function ForgotPassword() {
     setErrMsg(null);
 
     axios
-      .post("https://tickitz-be.onrender.com/aulia/auth/forgot-password", {
+      .post("https://pijar-camp-batch15-tickitz.cyclic.app/aulia/auth/forgot-password", {
         email: email,
       })
       .then(() => {

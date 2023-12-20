@@ -55,7 +55,7 @@ function ChooseSeat() {
             const formatDate = moment(dateMovie).format("dddd, DD MMMM YYYY");
             const completeDate = `${formatDate} at ${timeMovie}`;
             const requestBooking = await axios.post(
-                `https://tickitz-be.onrender.com/aulia/ticket/seat`,
+                `https://pijar-camp-batch15-tickitz.cyclic.app/aulia/ticket/seat`,
                 {
                     movieSlug: slug,
                     cinemaId: cinemaId, // 1, 3, 3
@@ -71,7 +71,7 @@ function ChooseSeat() {
 
             if (requestBooking.data.data.paymentId) {
                 const requestPayment = await axios.patch(
-                    `https://tickitz-be.onrender.com/aulia/ticket/purchase/${requestBooking.data.data.paymentId}`,
+                    `https://pijar-camp-batch15-tickitz.cyclic.app/aulia/ticket/purchase/${requestBooking.data.data.paymentId}`,
                     {},
                     {
                         headers: {

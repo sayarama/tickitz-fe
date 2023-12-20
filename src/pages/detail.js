@@ -18,7 +18,7 @@ function Detail() {
         try {
             // MovieDetail
             const requestDetail = await axios.get(
-                `https://tickitz-be.onrender.com/aulia/movie/detail/${slug}`
+                `https://pijar-camp-batch15-tickitz.cyclic.app/aulia/movie/detail/${slug}`
             );
 
             if (requestDetail.data.data.length > 0) {
@@ -27,7 +27,7 @@ function Detail() {
 
             // CinemaDetail
             const requestCinema = await axios.get(
-                `https://tickitz-be.onrender.com/aulia/movie/${slug}/cinemas`
+                `https://pijar-camp-batch15-tickitz.cyclic.app/aulia/movie/${slug}/cinemas`
             );
 
             if (requestCinema.data.data.length > 0) {

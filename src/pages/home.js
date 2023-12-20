@@ -21,7 +21,7 @@ function home() {
         try {
             // ShowingData
             const nowShowing = await axios.get(
-                "https://tickitz-be.onrender.com/aulia/movie/now-showing"
+                "https://pijar-camp-batch15-tickitz.cyclic.app/aulia/movie/now-showing"
             );
 
             if (nowShowing.status === 200) {
@@ -31,7 +31,7 @@ function home() {
 
             // UpcomingData
             const upcoming = await axios.get(
-                "https://tickitz-be.onrender.com/aulia/movie/upcoming"
+                "https://pijar-camp-batch15-tickitz.cyclic.app/aulia/movie/upcoming"
             );
 
             if (upcoming.status === 200) {

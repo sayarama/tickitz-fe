@@ -24,7 +24,7 @@ function Register() {
     setErrMsg(null);
 
     axios
-      .post("https://tickitz-be.onrender.com/aulia/auth/register", {
+      .post("https://pijar-camp-batch15-tickitz.cyclic.app/aulia/auth/register", {
         email: email,
         password: password,
         fullname: fullName,
