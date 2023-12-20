@@ -149,3 +149,8 @@ Contributions are what make the open source community such an amazing place to b
 </table>
 
 
+## Related Project
+
+[`Backend Tickitz`](https://github.com/sayarama/tickitz-be.git)
+[ `Live Website`](https://tickitz-fe-two.vercel.app/)
+
